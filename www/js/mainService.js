@@ -7,4 +7,12 @@ angular.module('starter')
     this.userRef = new Firebase("https://shareblood.firebaseio.com/users");
 
 
+    this.signup = function(){
+
+    }
+
+
+
+
+
   })

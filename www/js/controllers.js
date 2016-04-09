@@ -13,22 +13,19 @@ angular.module('starter.controllers', [])
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('templates/modals/login.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.loginModal = modal;
   });
-
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
-    $scope.modal.hide();
+    $scope.loginModal.hide();
   };
-
   // Open the login modal
   $scope.login = function() {
-    $scope.modal.show();
+    $scope.loginModal.show();
   };
-
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
@@ -39,6 +36,36 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+//---------------------------------------------------
+
+
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/modals/signup.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.signupModal = modal;
+  });
+  // Triggered in the login modal to close it
+  $scope.closeSignup = function() {
+    $scope.signupModal.hide();
+  };
+  // Open the login modal
+  $scope.signup = function() {
+    $scope.signupModal.show();
+  };
+  // Perform the signup action when the user submits the signup form
+  $scope.doSignup = function() {
+    console.log('Doing login', $scope.loginData);
+
+    // Simulate a login delay. Remove this and replace with your login
+    // code if using a login system
+    $timeout(function() {
+      $scope.closeLogin();
+    }, 1000);
+  };
+
+
 })
 
 .controller('PlaylistsCtrl', function($scope) {
